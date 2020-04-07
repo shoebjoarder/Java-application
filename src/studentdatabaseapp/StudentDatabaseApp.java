@@ -7,6 +7,7 @@ public class StudentDatabaseApp {
 		// Ask how many users needed to be added
 		stud1.enroll();
 		stud1.payTuition();
+		System.out.println(stud1.showInfo());
 		// Create n number of new students
 		
 	}
