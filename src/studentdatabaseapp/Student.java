@@ -7,7 +7,7 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	private String studentID;
-	private String courses = null;
+	private String courses = "";
 	private int tuitionBalance = 0;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
@@ -21,7 +21,7 @@ public class Student {
 		System.out.print("Enter student last name: ");
 		this.lastName = in.nextLine();
 		
-		System.out.println("1 - Freshmen\n2 - Sophmore\n3 - Junior\n4 - Senior\nEnter student class level: ");
+		System.out.print("1 - Freshmen\n2 - Sophmore\n3 - Junior\n4 - Senior\nEnter student class level: ");
 		this.gradeYear = in.nextInt();
 		
 		setStudentID();
@@ -50,14 +50,25 @@ public class Student {
 			else {break;}
 		} while (1 != 0);
 		System.out.println("Enrolled in: 	" + courses);
-		System.out.println("Tuition balance " + tuitionBalance);
+		//System.out.println("Tuition balance " + tuitionBalance);		// uncommented after viewBalance function
 	}
 	
 	// View balance 
-	
+	public void viewBalance() {
+		System.out.println("Your due balance is $" + tuitionBalance);
+	}
 	
 	// Pay tuition
-	
+	public void payTuition() {
+		viewBalance();
+		System.out.print("Enter your payment: $");
+		Scanner in = new Scanner(System.in);
+		int payment = in.nextInt();
+		tuitionBalance = tuitionBalance - payment;
+		System.out.println("Thank you for your payment of $" + payment);
+		viewBalance();
+	}
 	
 	// Show status
+	
 }
