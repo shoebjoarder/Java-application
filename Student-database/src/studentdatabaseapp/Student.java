@@ -25,7 +25,6 @@ public class Student {
 		this.gradeYear = in.nextInt();
 		
 		setStudentID();
-		
 		// System.out.println(firstName + " " + lastName + " " + gradeYear + studentID);
 	}
 	
@@ -38,12 +37,12 @@ public class Student {
 	
 	// Enroll in courses
 	public void enroll() {
-		// Get inside a loop, user hits 0
+		// Get inside a loop, user hits q
 		do  {
-			System.out.print("Enter course to enroll (Q to exit): ");
+			System.out.print("Enter course to enroll (q to exit): ");
 			Scanner in = new Scanner(System.in);
 			String course = in.nextLine();
-			if (!course.equals("Q")) {
+			if (!course.equals("q")) {
 				courses = courses + "\n   " + course;
 				tuitionBalance = tuitionBalance + costOfCourse;
 			}
